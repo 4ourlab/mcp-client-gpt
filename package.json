@@ -1,0 +1,37 @@
+{
+    "name": "@4ourlab/mcp-client-gpt",
+    "version": "1.0.0",
+    "description": "MCP (Model Context Protocol) implementation for OpenAI GPT models",
+    "main": "build/src/index.js",
+    "types": "build/src/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./build/src/index.js",
+            "require": "./build/src/index.js"
+        },
+        "./examples/*": "./build/examples/*"
+    },
+    "scripts": {
+        "build": "tsc && cp -r examples build/ && node -e \"require('fs').chmodSync('build/src/index.js', '755')\"",
+        "dev": "tsc --watch"
+    },
+    "keywords": ["mcp", "model-context-protocol", "gpt", "openai", "ai", "typescript", "nodejs"],
+    "author": "Billston",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/4ourlab/mcp-client-gpt"
+    },
+    "homepage": "https://github.com/4ourlab/mcp-client-gpt",
+    "bugs": {
+        "url": "https://github.com/4ourlab/mcp-client-gpt/issues"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.17.0",
+        "openai": "^4.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.16.5",
+        "typescript": "^5.8.3"
+    }
+}
